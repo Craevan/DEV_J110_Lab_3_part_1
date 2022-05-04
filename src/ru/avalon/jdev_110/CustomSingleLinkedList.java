@@ -94,9 +94,11 @@ public class CustomSingleLinkedList<T> {
 
     //Опеределяет содержит ли список элемент
     public boolean contains(T data) {
+        if (data == null)
+            throw new IllegalArgumentException("Аргумент не может быть null");
         Node<T> tmp = head;
         while (tmp != null) {
-            if (tmp.element.equals(data))
+            if (data.equals(tmp.element))
                 return true;
             tmp = tmp.next;
         }
@@ -127,4 +129,5 @@ public class CustomSingleLinkedList<T> {
             this.element = element;
         }
     }
+
 }
