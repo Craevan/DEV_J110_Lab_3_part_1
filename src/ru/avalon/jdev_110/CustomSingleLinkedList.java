@@ -16,9 +16,7 @@ public class CustomSingleLinkedList<T> {
         return size;
     }
 
-    /**
-     * Добавляет элемент в начало списка
-     */
+     //Добавляет элемент в начало списка
     public void addToHead(T data) {
         if (this.size == 0) {
             addFirstElement(data);
@@ -32,6 +30,7 @@ public class CustomSingleLinkedList<T> {
         ++size;
     }
 
+    //Добавляет элемент в конец списка
     public void addToEnd(T data) {
         if (this.size == 0) {
             addFirstElement(data);
@@ -45,12 +44,14 @@ public class CustomSingleLinkedList<T> {
         ++size;
     }
 
+    //Берет элемент из начала списка без его удаления
     public T getElementFromHead() {
         if (this.size != 0)
             return head.element;
         return null;
     }
 
+    //Берет элемент из начала списка и удаляет его из списка
     public T peekElementFromHead() {
         if (this.size != 0) {
             T tmp = getElementFromHead();
@@ -61,12 +62,14 @@ public class CustomSingleLinkedList<T> {
         return null;
     }
 
+    //Берет элемент из хвоста списка без его удаления
     public T getElementFromEnd() {
         if (this.size != 0)
             return tail.element;
         return null;
     }
 
+    //Берет элемент из хвоста списка и удаляет его из списка
     public T peekElementFromEnd() {
         if (this.size != 0) {
             T tmp = getElementFromEnd();
@@ -84,10 +87,12 @@ public class CustomSingleLinkedList<T> {
         return null;
     }
 
+    //Опеределяет является ли список пустым
     public boolean isEmpty() {
         return this.size == 0;
     }
 
+    //Опеределяет содержит ли список элемент
     public boolean contains(T data) {
         Node<T> tmp = head;
         while (tmp != null) {
@@ -98,6 +103,7 @@ public class CustomSingleLinkedList<T> {
         return false;
     }
 
+    //Выводит элементы списка на экран
     public void printAll() {
         Node<T> tmp = head;
         while (tmp != null) {
@@ -112,6 +118,7 @@ public class CustomSingleLinkedList<T> {
         this.head.next = null;
     }
 
+    //Узел списка
     private static class Node<T> {
         private final T element;
         private Node<T> next;
